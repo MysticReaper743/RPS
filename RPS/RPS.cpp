@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <random>
 #include <io.h>
 #include <fcntl.h>
@@ -21,31 +21,31 @@ int main()
     int userChoice;
 
 
-    cout << "Hello, welcome to my Rock, Paper, Scissors Game!" << endl;
+    printf("%s", "Hello, welcome to my Rock, Paper, Scissors Game!\n");
 
     while (true) {
-        cout << "Type 1 for Rock" << endl;
-        cout << "Type 2 for Paper" << endl;
-        cout << "Type 3 for Scissors" << endl;
-        cout << "Type 4 to exit: ";
+        printf("%s", "Type 1 for Rock\n");
+        printf("%s", "Type 2 for Paper\n");
+        printf("%s", "Type 3 for Scissors\n");
+        printf("%s", "Type 4 to exit: ");
 
         cin >> userChoice;
         if(userChoice == 1)
         {
-            cout << "You chose Rock!!" << endl;
+            printf("%s", "You chose Rock!!\n");
             enemyChoice(1);
         }else if(userChoice == 2)
         {
-            cout << "You chose Paper!!" << endl;
+            printf("%s", "You chose Paper!!\n");
             enemyChoice(2);
         }else if(userChoice == 3)
         {
-            cout << "You chose Scissors!!" << endl;
+            printf("%s", "You chose Scissors!!\n");
             enemyChoice(3);
         }else if(userChoice == 4)
         {
             return 0;
-        }else cout << "not a valid user input. Try again." << endl;
+        }else printf("%s", "not a valid user input. Try again.\n");
     	cin.clear();
         cin.ignore(1000, '\n');
         
@@ -151,9 +151,9 @@ void displayHandler(int userChoice, int enemyChoice)
         break;
     }
     _setmode(_fileno(stdout), _O_TEXT);
-    if (userChoice == enemyChoice) cout << "\n It's a tie!\n";
-    else if (userChoice + 1 == enemyChoice || userChoice == enemyChoice + 2) cout << "\n Looks like you lost!\n";
-    else cout << "\n You Win!!\n";
+    if (userChoice == enemyChoice) printf("%s", "\nIt's a tie!\n");
+    else if (userChoice + 1 == enemyChoice || userChoice == enemyChoice + 2) printf("%s", "\nLooks like you lost!\n");
+    else printf("%s", "\nYou Win!!\n");
     
 }
 
@@ -163,52 +163,52 @@ void printRock(int line)
     switch (line)
     {
     case 1:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+        wprintf(L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
         break;
     case 2:
-        wcout << L"⠀⠀⠀⠀⠀⠀⣀⣠⣤⣶⣾⣿⣿⣿⣿⣦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ";
+        wprintf(L"⠀⠀⠀⠀⠀⠀⣀⣠⣤⣶⣾⣿⣿⣿⣿⣦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ");
         break;
     case 3:
-        wcout << L"⠀⠀⠀⠀⣾⣿⡿⠟⠋⣹⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣄⡀⠀⠀⠀⠀⠀⠀  ";
+        wprintf( L"⠀⠀⠀⠀⣾⣿⡿⠟⠋⣹⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣄⡀⠀⠀⠀⠀⠀⠀  ");
         break;
     case 4:
-        wcout << L"⠀⠀⠀⢸⣿⣿⣿⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠀⠀⠀⠀⠀⠀";
+        wprintf( L"⠀⠀⠀⢸⣿⣿⣿⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠀⠀⠀⠀⠀⠀");
         break;
     case 5:
-        wcout << L"⠀⠀⢀⣿⡿⠿⣿⣇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀";
+        wprintf( L"⠀⠀⢀⣿⡿⠿⣿⣇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀");
         break;
     case 6:
-        wcout << L"⠀⠀⠈⠁⠀⠀⣿⣿⣾⣿⣿⠉⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀";
+        wprintf( L"⠀⠀⠈⠁⠀⠀⣿⣿⣾⣿⣿⠉⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀");
         break;
     case 7:
-        wcout << L"⠀⠀⠀⣠⣿⣦⣸⣿⣿⣿⣿⡀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀";
+        wprintf( L"⠀⠀⠀⣠⣿⣦⣸⣿⣿⣿⣿⡀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀");
         break;
     case 8:
-        wcout << L"⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣄⠀⠘⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀";
+        wprintf( L"⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣄⠀⠘⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀");
         break;
     case 9:
-        wcout << L"⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣷⣄⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀";
+        wprintf( L"⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣷⣄⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀");
         break;
     case 10:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⡏⠹⣿⣿⣧⡀⠘⠛⠻⠿⣿⣿⣿⣿⣿⣿⠁⠀⠀";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⡏⠹⣿⣿⣧⡀⠘⠛⠻⠿⣿⣿⣿⣿⣿⣿⠁⠀⠀");
         break;
     case 11:
-        wcout << L"⠀⠀⠀⠀⠀⠈⠲⣄⡀⠈⠻⠃⠀⢻⣿⣿⣿⣶⣶⣶⣶⣶⣾⣿⣿⣿⡏⠀⠀⠀";
+        wprintf( L"⠀⠀⠀⠀⠀⠈⠲⣄⡀⠈⠻⠃⠀⢻⣿⣿⣿⣶⣶⣶⣶⣶⣾⣿⣿⣿⡏⠀⠀⠀");
         break;
     case 12:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠈⢿⣶⣄⡀⠀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠀";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠈⢿⣶⣄⡀⠀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠀");
         break;
     case 13:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⡆⠀⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⡆⠀⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀");
         break;
     case 14:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠇⠀⠀⢹⣿⣿⣿⣿⣿⣿⠿⠿⠟⠃⠀⠀⠀⠀";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠇⠀⠀⢹⣿⣿⣿⣿⣿⣿⠿⠿⠟⠃⠀⠀⠀⠀");
         break;
     case 15:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ");
         break;
     default:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠀⠀     ";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠀⠀     ");
         break;
     }
 }
@@ -218,43 +218,43 @@ void printPaper(int line)
 	switch(line)
 	{
 	case 1:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
         break;
 	case 2:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
         break;
 	case 3:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
         break;
 	case 4:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣶⣿⣿⡿⠋⣀⣀⣀⣀⣀⣤⣤⣤⣶⣶⡄⠀⠀ ";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣶⣿⣿⡿⠋⣀⣀⣀⣀⣀⣤⣤⣤⣶⣶⡄⠀⠀ ");
         break;
 	case 5:
-        wcout << L"⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⣿⣿⡏⢀⣶⣿⣿⣿⣿⡿⠿⠿⠛⠛⠋⠁⠀⠀ ";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⣿⣿⡏⢀⣶⣿⣿⣿⣿⡿⠿⠿⠛⠛⠋⠁⠀⠀ ");
         break;
 	case 6:
-        wcout << L"⠀⠀⣾⣶⣶⣶⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿⣯⣁⣀⣀⣀⣀⣀⣀⣀⡀⠀⠀ ";
+        wprintf( L"⠀⠀⣾⣶⣶⣶⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿⣯⣁⣀⣀⣀⣀⣀⣀⣀⡀⠀⠀ ");
         break;
 	case 7:
-        wcout << L"⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠇⠀ ";
+        wprintf( L"⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠇⠀ ");
         break;
 	case 8:
-        wcout << L"⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⢉⣁⣴⣿⣿⣿⣿⣉⣉⣉⠉⠁⠀⠀⠀⠀⠀⠀⠀";
+        wprintf( L"⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⢉⣁⣴⣿⣿⣿⣿⣉⣉⣉⠉⠁⠀⠀⠀⠀⠀⠀⠀");
         break;
 	case 9:
-        wcout << L"⠀⠀⠉⠉⠉⠉⠉⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣶⡀⠀⠀ ";
+        wprintf( L"⠀⠀⠉⠉⠉⠉⠉⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣶⡀⠀⠀ ");
         break;
 	case 10:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠙⠛⠿⢿⣿⣿⣿⣿⣿⣤⣀⡀⠀⠀⠀⠈⠉⠉⠀⠀⠀⠀";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠙⠛⠿⢿⣿⣿⣿⣿⣿⣤⣀⡀⠀⠀⠀⠈⠉⠉⠀⠀⠀⠀");
         break;
 	case 11:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠛⠿⢿⣿⣿⣷⣦⣄⠀⠀⠀⠀⠀⠀⠀";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠛⠿⢿⣿⣿⣷⣦⣄⠀⠀⠀⠀⠀⠀⠀");
         break;
 	case 12:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠀⠀⠀     ";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠀⠀⠀     ");
         break;
 	default:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠀⠀     ";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠀⠀     ");
         break;
 	}
 }
@@ -264,211 +264,209 @@ void printScissors(int line)
     switch (line)
     {
     case 1:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
         break;
     case 2:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⢰⡟⠉⠉⠙⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⢰⡟⠉⠉⠙⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
         break;
     case 3:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠸⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠸⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
         break;
     case 4:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⡄⠀⠀⢠⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⡄⠀⠀⢠⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
         break;
     case 5:
-        wcout << L"⠀⢀⣤⡶⠶⢶⣤⣄⣀⠘⠛⠶⣴⠿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+        wprintf( L"⠀⢀⣤⡶⠶⢶⣤⣄⣀⠘⠛⠶⣴⠿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
         break;
     case 6:
-        wcout << L"⠀⣾⡇⠀⠀⠀⠈⠙⢿⣿⣷⣶⣤⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+        wprintf( L"⠀⣾⡇⠀⠀⠀⠈⠙⢿⣿⣷⣶⣤⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
         break;
     case 7:
-        wcout << L"⠀⠘⢷⣄⡀⠀⠀⢀⣸⡟⠉⠙⠻⣿⣿⣿⣷⣶⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+        wprintf( L"⠀⠘⢷⣄⡀⠀⠀⢀⣸⡟⠉⠙⠻⣿⣿⣿⣷⣶⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
         break;
     case 8:
-        wcout << L"⠀⠀⠀⠉⠛⠛⠛⠛⠉⠀⠀⢸⣦⣄⡉⠛⠿⣿⣿⣿⣿⣿⣶⣤⣀⠀⠀⠀⠀⠀";
+        wprintf( L"⠀⠀⠀⠉⠛⠛⠛⠛⠉⠀⠀⢸⣦⣄⡉⠛⠿⣿⣿⣿⣿⣿⣶⣤⣀⠀⠀⠀⠀⠀");
         break;
     case 9:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣆⠀⠀⠙⠻⢿⣿⣿⣿⣿⣷⣄⠀⠀⠀";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣆⠀⠀⠙⠻⢿⣿⣿⣿⣿⣷⣄⠀⠀⠀");
         break;
     case 10:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣦⠀⠀⠀⠀⠈⠙⠻⢿⣿⣿⣷⡀⠀";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣦⠀⠀⠀⠀⠈⠙⠻⢿⣿⣿⣷⡀⠀");
         break;
     case 11:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⣿⣧⡀⠀⠀⠀⠀⠀⠀⠉⠛⠿⣷⠀";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⣿⣧⡀⠀⠀⠀⠀⠀⠀⠉⠛⠿⣷⠀");
         break;
     case 12:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
         break;
     case 13:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣿⣿⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣿⣿⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
         break;
     case 14:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀");
         break;
     case 15:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠓⠀⠀      ";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠓⠀⠀      ");
         break;
     default:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠀⠀     ";
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠀⠀     ");
         break;
     }
 }
 void printEnemyRock(int line)
 {
-    wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+    wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
 
     switch (line)
     {
     case 1:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
         break;
     case 2:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⣄⣦⣿⣿⣿⣿⣾⣶⣤⣠⣀⠀⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⣄⣦⣿⣿⣿⣿⣾⣶⣤⣠⣀⠀⠀⠀⠀⠀⠀\n");
         break;
     case 3:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⡀⣄⣦⣷⣿⣿⣿⣿⣿⣿⣿⣿⣹⠋⠟⡿⣿⣾⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⡀⣄⣦⣷⣿⣿⣿⣿⣿⣿⣿⣿⣹⠋⠟⡿⣿⣾⠀⠀⠀⠀\n");
         break;
     case 4:
-        wcout << L"⠀⠀⠀⠀⠀⠀⡄⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢸⠀⣿⣿⣿⢸⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⠀⡄⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢸⠀⣿⣿⣿⢸⠀⠀⠀\n");
         break;
     case 5:
-        wcout << L"⠀⠀⠀⠀⠀⣆⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢸⣇⣿⠿⡿⣿⢀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⣆⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢸⣇⣿⠿⡿⣿⢀⠀⠀\n");
         break;
     case 6:
-        wcout << L"⠀⠀⠀⠀⣆⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⠉⣿⣿⣾⣿⣿⠀⠀⠁⠈⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⣆⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⠉⣿⣿⣾⣿⣿⠀⠀⠁⠈⠀⠀\n");
         break;
     case 7:
-        wcout << L"⠀⠀⠀⣆⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠹⠀⡀⣿⣿⣿⣿⣸⣦⣿⣠⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⣆⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠹⠀⡀⣿⣿⣿⣿⣸⣦⣿⣠⠀⠀⠀\n");
         break;
     case 8:
-        wcout << L"⠀⠀⣧⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⠘⠀⣄⣿⣿⣿⣿⣿⣿⣿⠻⠈⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⣧⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⠘⠀⣄⣿⣿⣿⣿⣿⣿⣿⠻⠈⠀⠀⠀\n");
         break;
     case 9:
-        wcout << L"⠀⠀⡇⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠻⠀⣄⣷⣿⣿⣿⣿⣿⣿⠻⠈⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⡇⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠻⠀⣄⣷⣿⣿⣿⣿⣿⣿⠻⠈⠀⠀⠀⠀⠀\n");
         break;
     case 10:
-        wcout << L"⠀⠀⠁⣿⣿⣿⣿⣿⣿⠿⠻⠛⠘⡀⣧⣿⣿⠹⡏⣿⣿⠻⠈⠀⠀⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠁⣿⣿⣿⣿⣿⣿⠿⠻⠛⠘⡀⣧⣿⣿⠹⡏⣿⣿⠻⠈⠀⠀⠀⠀⠀⠀⠀\n");
         break;
     case 11:
-        wcout << L"⠀⠀⠀⡏⣿⣿⣿⣾⣶⣶⣶⣶⣶⣿⣿⣿⢻⠀⠃⠻⠈⡀⣄⠲⠈⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⡏⣿⣿⣿⣾⣶⣶⣶⣶⣶⣿⣿⣿⢻⠀⠃⠻⠈⡀⣄⠲⠈⠀⠀⠀⠀⠀\n");
         break;
     case 12:
-        wcout << L"⠀⠀⠀⠁⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠈⠀⡀⣄⣶⢿⠈⠀⠀⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠁⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠈⠀⡀⣄⣶⢿⠈⠀⠀⠀⠀⠀⠀⠀\n");
         break;
     case 13:
-        wcout << L"⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠸⠀⡆⣿⢿⠙⠀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠸⠀⡆⣿⢿⠙⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
         break;
     case 14:
-        wcout << L"⠀⠀⠀⠀⠃⠟⠿⠿⣿⣿⣿⣿⣿⣿⢹⠀⠀⠇⠙⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⠃⠟⠿⠿⣿⣿⣿⣿⣿⣿⢹⠀⠀⠇⠙⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
         break;
     case 15:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   " << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   \n");
         break;
     default:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠀⠀     " << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠀⠀     \n");
         break;
     }
 }
 void printEnemyPaper(int line)
 {
-    wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+    wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
     switch (line)
     {
     case 1:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
         break;
     case 2:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠇⣿⣼⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠇⣿⣼⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
         break;
     case 3:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠏⣿⣿⣤⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠏⣿⣿⣤⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
         break;
     case 4:
-        wcout << L"⠀⠀⠀⡄⣶⣶⣤⣤⣤⣀⣀⣀⣀⣀⠋⡿⣿⣿⣶⣤⣠⣀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⡄⣶⣶⣤⣤⣤⣀⣀⣀⣀⣀⠋⡿⣿⣿⣶⣤⣠⣀⠀⠀⠀⠀⠀⠀⠀⠀\n");
         break;
     case 5:
-        wcout << L"⠀⠀⠀⠁⠋⠛⠛⠿⠿⡿⣿⣿⣿⣿⣶⢀⡏⣿⣿⣿⣿⣿⣼⢀⠀⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠁⠋⠛⠛⠿⠿⡿⣿⣿⣿⣿⣶⢀⡏⣿⣿⣿⣿⣿⣼⢀⠀⠀⠀⠀⠀⠀\n");
         break;
     case 6:
-        wcout << L"⠀⠀⠀⡀⣀⣀⣀⣀⣀⣀⣀⣁⣯⣿⣿⢸⡇⣿⣿⣿⣿⣿⣿⣿⣶⣶⣶⣾⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⡀⣀⣀⣀⣀⣀⣀⣀⣁⣯⣿⣿⢸⡇⣿⣿⣿⣿⣿⣿⣿⣶⣶⣶⣾⠀⠀\n");
         break;
     case 7:
-        wcout << L"⠀⠀⠇⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣼⠁⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀" << endl;
+        wprintf( L"⠀⠀⠇⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣼⠁⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀\n");
         break;
     case 8:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠁⠉⣉⣉⣉⣿⣿⣿⣿⣴⣁⢉⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠁⠉⣉⣉⣉⣿⣿⣿⣿⣴⣁⢉⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀\n");
         break;
     case 9:
-        wcout << L"⠀⠀⠀⡀⣶⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⠉⠉⠉⠉⠉⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⡀⣶⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⠉⠉⠉⠉⠉⠀⠀\n");
         break;
     case 10:
-        wcout << L"⠀⠀⠀⠀⠉⠉⠈⠀⠀⠀⡀⣀⣤⣿⣿⣿⣿⣿⢿⠿⠛⠙⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⠉⠉⠈⠀⠀⠀⡀⣀⣤⣿⣿⣿⣿⣿⢿⠿⠛⠙⠀⠀⠀⠀⠀⠀⠀⠀\n");
         break;
     case 11:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⣄⣦⣷⣿⣿⢿⠿⠛⠙⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⣄⣦⣷⣿⣿⢿⠿⠛⠙⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
         break;
     case 12:
-        wcout << L"⠀⠀      ⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ " << endl;
+        wprintf( L"⠀⠀      ⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ \n");
         break;
     default:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠀⠀     " << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠀⠀     \n");
         break;
     }
 }
 void printEnemyScissors(int line)
 {
-    wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+    wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
     switch (line)
     {
     case 1:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⣄⣠⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⣄⣠⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
         break;
     case 2:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⣦⠙⠉⠉⡟⢰⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⣦⠙⠉⠉⡟⢰⠀⠀⠀⠀⠀⠀⠀⠀\n");
         break;
     case 3:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣧⠸⠀⠀⠀⡇⢸⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣧⠸⠀⠀⠀⡇⢸⠀⠀⠀⠀⠀⠀⠀⠀\n");
         break;
     case 4:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⢠⠀⠀⡄⣿⠈⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⢠⠀⠀⡄⣿⠈⠀⠀⠀⠀⠀⠀⠀⠀\n");
         break;
     case 5:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠿⣴⠶⠛⠘⣀⣄⣤⢶⠶⡶⣤⢀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠿⣴⠶⠛⠘⣀⣄⣤⢶⠶⡶⣤⢀⠀\n");
         break;
     case 6:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⣀⣄⣤⣶⣷⣿⢿⠙⠈⠀⠀⠀⡇⣾⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⣀⣄⣤⣶⣷⣿⢿⠙⠈⠀⠀⠀⡇⣾⠀\n");
         break;
     case 7:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣄⣤⣶⣷⣿⣿⣿⠻⠙⠉⡟⣸⢀⠀⠀⡀⣄⢷⠘⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣄⣤⣶⣷⣿⣿⣿⠻⠙⠉⡟⣸⢀⠀⠀⡀⣄⢷⠘⠀\n");
         break;
     case 8:
-        wcout << L"⠀⠀⠀⠀⠀⣀⣤⣶⣿⣿⣿⣿⣿⠿⠛⡉⣄⣦⢸⠀⠀⠉⠛⠛⠛⠛⠉⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⣀⣤⣶⣿⣿⣿⣿⣿⠿⠛⡉⣄⣦⢸⠀⠀⠉⠛⠛⠛⠛⠉⠀⠀⠀\n");
         break;
     case 9:
-        wcout << L"⠀⠀⠀⣄⣷⣿⣿⣿⣿⢿⠻⠙⠀⠀⣆⣿⣿⢿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⣄⣷⣿⣿⣿⣿⢿⠻⠙⠀⠀⣆⣿⣿⢿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
         break;
     case 10:
-        wcout << L"⠀⡀⣷⣿⣿⢿⠻⠙⠈⠀⠀⠀⠀⣦⣿⣿⣿⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⡀⣷⣿⣿⢿⠻⠙⠈⠀⠀⠀⠀⣦⣿⣿⣿⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
         break;
     case 11:
-        wcout << L"⠀⣷⠿⠛⠉⠀⠀⠀⠀⠀⠀⡀⣧⣿⣿⣿⠸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⣷⠿⠛⠉⠀⠀⠀⠀⠀⠀⡀⣧⣿⣿⣿⠸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
         break;
     case 12:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣷⣿⣿⣿⠹⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣷⣿⣿⣿⠹⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
         break;
     case 13:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⣧⣿⣿⣿⠙⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⣧⣿⣿⣿⠙⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
         break;
     case 14:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⡀⣷⣿⣿⠻⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⡀⣷⣿⣿⠻⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
         break;
     case 15:
-        wcout << L"⠀⠀       ⠓⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
+        wprintf( L"⠀⠀       ⠓⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
         break;
     default:
-        wcout << L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠀⠀     " << endl;
+        wprintf( L"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠀⠀     \n");
         break;
     }
 }
-
-
